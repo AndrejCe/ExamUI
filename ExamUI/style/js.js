@@ -1,7 +1,18 @@
 document.getElementById('addTodo').addEventListener('click', async() => {
     const input = document.getElementById('todoText');
     const title = input.value;
-
+///////////
+//////////    Validacija input
+    
+      if (title == null || title == "") {
+        alert("List can't be blank");
+        return false;
+    }
+    
+    
+    
+ /////////
+    
     if (title) {
         const res = await fetch(`https://jsonplaceholder.typicode.com/todos`, {
             method: 'POST',
